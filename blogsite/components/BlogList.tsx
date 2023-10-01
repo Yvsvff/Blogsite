@@ -39,7 +39,7 @@ export default function BlogList({posts}: Props) {
                                 </p>
                             </div>
 
-                            <div className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center">
+                            <div key={post._id} className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center">
                                 {post.categories.map((category) => (
                                     // eslint-disable-next-line react/jsx-key
                                     <div className="bg-yellow-400 text-center text-black px-3 py-1 rounded-full text-sm font-semibold">
