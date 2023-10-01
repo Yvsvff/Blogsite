@@ -1,13 +1,15 @@
 
-import './globals.css'
+import Header from '@components/Header'
+import './../globals.css'
 import type { Metadata } from 'next'
+import Banner from '@components/Banner'
 
 
 
 
 export const metadata: Metadata = {
   
-  title: 'JB Blog',
+  title: 'Yvsvff Blog',
   description: 'Created by Yusuff Atanda',
  
 
@@ -20,7 +22,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body >{children}</body>
+     
+      <body >
+      <Header />
+      <Banner />
+        {children}
+        </body>
     </html>
   )
 }
