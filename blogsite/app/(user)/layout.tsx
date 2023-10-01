@@ -3,9 +3,7 @@ import Header from '@components/Header'
 import './../globals.css'
 import type { Metadata } from 'next'
 import Banner from '@components/Banner'
-import dynamic from 'next/dynamic'
-import {draftMode} from 'next/headers'
-import {token} from './../../sanity/lib/sanity.fetch'
+
 
 
 
@@ -18,19 +16,14 @@ export const metadata: Metadata = {
 }
 
 
-const PreviewProvider = dynamic(() => import('@components/PreviewProvider'))
 
 export default async function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body>
+      <body className='max-w-7xl mx-auto'>
         <Header />
         <Banner />
-        {draftMode().isEnabled ? (
-          <PreviewProvider token={token}>{children}</PreviewProvider>
-        ) : (
-          children
-        )}
+        {children}
       </body>
     </html>
   )
